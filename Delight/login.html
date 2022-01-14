@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+          
+        }
+        #main{
+            border: 1px solid transparent;
+            width: 30%;
+            height: 440px;
+            margin: auto;
+            margin-top: 5%;
+            background-color: lightgray;
+            padding: 2%;
+            margin-bottom: 9%;
+        }
+
+   #submit{
+       color: white;
+       margin: auto;
+       width: 50%;
+       height: 40px;
+      outline: none;
+      margin-top: 4%;
+      background-color:black;
+      font-size: 140%;
+     
+   }
+     form{
+         margin-top: 5%;
+         text-align: center;
+     }
+    #head{
+        border: 1px solid transparent;
+        width: 40%;
+        margin: auto;
+        font-size: 160%;
+        text-align: center;
+        background-color: black;
+        color: white;
+        padding: 4%;
+     } 
+label{
+    display: inline-block;
+   font-size: 140%;
+    width: 100px;
+}
+input{
+    height: 30px;
+    margin-bottom: 5%;
+    width:240px;
+    font-size: 150%;
+}
+    </style>
+</head>
+<body>
+    <div id="n"></div>
+    <div id="main">
+        <h2 id="head">Login</h2>
+        <form onsubmit="Login(event)" id="form">
+           
+               
+              
+               <label>Username:
+                
+               </label>
+               <input type="text" id="user" />
+               <br>
+        
+        
+            <label>Password: 
+               
+            </label>
+            <input type="password" id="pass" />
+            <br>
+            
+            <input id="submit" type="submit"/> 
+      
+        </form>
+    </div>
+    <div id="f"></div>
+</body>
+</html>
+<script type="module">
+    import{navbar,footer}from "./components/index.js"
+    // console.log(navbar,footer);
+    document.querySelector("#n").innerHTML=navbar();
+    document.querySelector("#f").innerHTML=footer();
+    document.querySelector(".rec").addEventListener("click",function(){
+     window.location.href = "./recipes.html";
+    })
+    document.querySelector(".day").addEventListener("click",function(){
+     window.location.href = "./recipe_day.html";
+    })
+    document.querySelector(".sign").addEventListener("click",function(){
+     window.location.href = "./signup.html";
+    })
+    document.querySelector("#Layer_1").addEventListener("click",function(){
+     window.location.href = "./home.html";
+    })
+</script>
+<script>
+   function Login(event)
+   {
+       event.preventDefault();
+       let data = JSON.parse(localStorage.getItem("register_detail"))
+       console.log(data)
+       
+      if(form.user.value==data.username && form.pass.value==data.password)
+      {
+          alert("Login Successful")
+          window.location.href = "home.html";
+      }
+      else{
+        alert("Login Unuccessful")
+      }
+
+      
+       
+   }
+</script>

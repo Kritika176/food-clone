@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+
+        body {
+            position: relative;
+        }
+       
+        
+
+        #recipes{
+            width: 90%;
+            min-height: 20px;
+            margin:auto;
+            margin-top: 2%;
+            border: 1px solid transparent;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(9,380px);
+            
+            grid-gap: 25px;
+            margin-bottom: 2%;
+            
+        }
+        #image{
+            width: 100%;
+            height: 60%;
+        }
+        #title{
+            margin-top: 3%;
+            text-align: center;
+            font-family: sans-serif;
+
+        }
+        .des{
+            text-align: center;
+            font-family: sans-serif;
+            margin-top: 2%;
+        }
+      
+        #item{
+            overflow: hidden;
+        }
+        #select{
+            margin-top: 2%;
+            width: 18%;
+            height: 30px;
+        }
+        #button{
+            
+            display: flex;
+            gap: 70%;
+        }
+        #select_two{
+            border: 1px solid black;
+          height: 30px;
+            outline: none;
+            margin-top: 2%;
+        }
+    </style>
+</head>
+<body>
+    <div id="n"></div>
+    <div id="button">
+   <select id="select">
+       
+       <option value="category">Filter by category</option>
+       <option value="Side">Side</option>
+       <option value="Vegetarian">Vegetarian</option>
+       <option value="Dessert">Dessert</option>
+       
+   </select>
+   <select id="select_two">
+    
+       <option value="random">Random</option>
+       <option value="newly">Newly Added</option>
+       
+       
+   </select>
+</div>
+    <div id="recipes"></div>
+    <div id="f"></div>
+ 
+</body>
+</html>
+<script type="module">
+    import{navbar,footer}from "./components/index.js"
+    // console.log(navbar,footer);
+    document.querySelector("#n").innerHTML=navbar();
+    document.querySelector("#f").innerHTML=footer();
+    document.querySelector(".rec").addEventListener("click",function(){
+     window.location.href = "./recipes.html";
+    })
+    document.querySelector(".day").addEventListener("click",function(){
+     window.location.href = "./recipe_day.html";
+    })
+    document.querySelector(".sign").addEventListener("click",function(){
+     window.location.href = "./signup.html";
+    })
+    document.querySelector("#Layer_1").addEventListener("click",function(){
+     window.location.href = "./home.html";
+    })
+</script>
+<script src="./scripts/recipes.js"></script>

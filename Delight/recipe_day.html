@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+</head>
+<style>
+    #image{
+        border: 1px solid transparent;
+        width: 60%;
+        min-height: 300px;
+        margin: auto;
+        margin-top: 2%;
+        margin-left: 25%;
+        
+    }
+    #meal_image{
+           width:80%;
+           height: 30%;
+       }
+       #desc{
+           border: 1px solid black;
+           width: 70%;
+           height: 500px;
+           margin: auto;
+           background-color:rgb(103,20,110);
+           color: white;
+           padding: 2%;
+           margin-bottom: 25%;
+       }
+       #para{
+           margin-top: 2%;
+           font-size: 120%;
+       }
+     
+</style>
+<body>
+    <div id="n"></div>
+   
+    <div id="image"></div>
+    <div id="desc"></div>
+ 
+ <div id="f"></div> 
+</body>
+</html>
+<script type="module">
+    import{navbar,footer}from "./components/index.js"
+    // console.log(navbar,footer);
+    document.querySelector("#n").innerHTML=navbar();
+    
+    document.querySelector("#f").innerHTML=footer();
+    document.querySelector(".rec").addEventListener("click",function(){
+     window.location.href = "./recipes.html";
+    })
+    document.querySelector(".sign").addEventListener("click",function(){
+     window.location.href = "./signup.html";
+    })
+    document.querySelector("#Layer_1").addEventListener("click",function(){
+     window.location.href = "./home.html";
+    })
+</script>
+<script src="./scripts/recipe_day.js"></script>
